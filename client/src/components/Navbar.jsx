@@ -1,7 +1,7 @@
 import { Menu, School } from 'lucide-react';
 import React, { useEffect } from 'react';
 import { Button } from './ui/button';
-import Logo from "../assets/logo.png";
+import Logo from "../assets/Logo.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
