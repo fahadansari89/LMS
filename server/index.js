@@ -12,7 +12,7 @@ import courseProgressRoute from "./routes/courseProgress.route.js"
 dotenv.config()
 const app =express(); 
 const corsOption={
-    origin:'http://localhost:5173',
+    origin:'https://lernify-tau.vercel.app',
     credentials:true
 }
 
