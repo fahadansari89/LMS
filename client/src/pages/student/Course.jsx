@@ -35,7 +35,7 @@ const Course = ({ course }) => {
           </div>
 
           {/* Course Content */}
-          <CardContent className="px-5 py-4 space-y-3">
+          <CardContent className="px-5 py-4 space-y-1">
             {/* Course Title */}
             <h1 className="font-bold text-lg truncate hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 cursor-pointer">
               {course.courseTitle}
@@ -54,7 +54,7 @@ const Course = ({ course }) => {
             </div>
 
             {/* Price & Enroll Button */}
-            <div className="flex items-center justify-between mt-2">
+            <div className="flex items-center justify-between ">
               <span className="text-xl font-bold text-blue-600 dark:text-blue-400">{course.coursePrice}</span>
               {/* <button className="px-4 py-1.5 text-sm rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md hover:opacity-90 transition">
                 Enroll Now

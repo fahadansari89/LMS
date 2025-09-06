@@ -21,6 +21,7 @@ const CourseDetail = () => {
     const params = useParams();
     const courseId = params.courseId
     const { data, isLoading, isError } = useGetCourseDetailWithStatusQuery(courseId)
+
     if (isLoading) {
         return (
             <h1>Loading...</h1>
@@ -31,14 +32,16 @@ const CourseDetail = () => {
             <h1>failed to load coourse</h1>
         )
     }
+    const { course, purchased } = data
+    console.log(data);
+    
     const handleContinueCourse = async () => {
         if (purchased) {
             navigate(`/course-progress/${courseId}`)
         }
     }
-    const { course, purchased } = data
 
-
+    
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -135,9 +138,10 @@ const CourseDetail = () => {
                                         <video
                                             width="100%"
                                             height="100%"
-                                            url={course.lectures[0].videoUrl}
-                                            controls
+                                            src={course.lectures[0].videoUrl.replace("http://", "https://")}
+                                            controls={true}
                                         />
+                                        
                                     ) : (
                                         <div className="flex items-center justify-center w-full h-full text-gray-500 dark:text-gray-300 text-sm">
                                             No video available
@@ -145,7 +149,7 @@ const CourseDetail = () => {
                                     )}
                                 </span>
                             </motion.div>
-
+                            
                             {/* Lecture Title */}
                             {course?.lectures?.length > 0 ? course.lectures[0].lectureTitle : "No lecture available"}
                             <Separator className="my-3" />

@@ -63,6 +63,10 @@ const appRouter = createBrowserRouter(
           element: <ProtectedRoute><MyLearning /></ProtectedRoute>
         },
         {
+          path: "mylearning/course-detail/:courseId",
+          element: <ProtectedRoute><CourseDetail /></ProtectedRoute>
+        },
+        {
           path: "profile",
           element: <ProtectedRoute><Profile /></ProtectedRoute>
         },

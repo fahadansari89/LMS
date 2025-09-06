@@ -213,6 +213,11 @@ const MobileNavbar = ({ user }) => {
               Edit Profile
             </span>
           </Link>
+          <Link to={'/admin/course'}>
+            <span className="hover:text-blue-600 cursor-pointer transition">
+             Create course
+            </span>
+          </Link>
 
           <span className="hover:text-red-500 cursor-pointer transition">
             Logout
