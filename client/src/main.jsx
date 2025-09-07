@@ -10,7 +10,7 @@ import FullPageLoader from './components/FullPageLoader'
 
 const Custom = ({ children }) => {
   const { isLoading } = useLoadUserQuery();
-  return <>{isLoading ? <FullPageLoader/> : <>{children}</>}</>;
+  // return <>{isLoading ? <FullPageLoader/> : <>{children}</>}</>;
 };
 createRoot(document.getElementById('root')).render(
   <StrictMode>

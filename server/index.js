@@ -32,9 +32,11 @@ app.use("/course",courseRoute)
 app.use("/media",mediaRoute)
 app.use("/purchase",coursePurchaseRoute)
 app.use("/progress",courseProgressRoute)
+app.get("/", (req, res) => {
+  res.send("LMS Backend is running ✅");
+});
 
-
-app.listen(port,()=>{
+app.listen(port, "0.0.0.0",()=>{
     dbConnection()
 
 
