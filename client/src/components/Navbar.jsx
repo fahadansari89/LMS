@@ -72,7 +72,7 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  to="/admin/course"
+                  to="/admin/course/create"
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition"
                 >
                   Create Course

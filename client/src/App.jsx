@@ -137,10 +137,10 @@ function App() {
 
   return (
     <main>
-      {/* <ThemeProvider>
+      <ThemeProvider>
 
-      </ThemeProvider> */}
       <RouterProvider router={appRouter} />
+      </ThemeProvider>
 
     </main>
   )

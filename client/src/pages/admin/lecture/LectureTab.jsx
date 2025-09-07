@@ -105,8 +105,8 @@ const LectureTab = () => {
       <Card className="shadow-lg rounded-2xl border border-gray-200 p-2">
         <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <CardTitle className="text-2xl font-semibold text-gray-800">Edit Lecture</CardTitle>
-            <CardDescription className="text-gray-500">
+            <CardTitle className="text-2xl font-semibold text-gray-800 dark:text-white">Edit Lecture</CardTitle>
+            <CardDescription className="text-gray-500 dark:text-white">
               Make changes and click save when done.
             </CardDescription>
           </div>
@@ -132,7 +132,7 @@ const LectureTab = () => {
         <CardContent className="space-y-6">
           {/* Title Input */}
           <div>
-            <Label className="text-gray-700">Title</Label>
+            <Label className="text-gray-700 dark:text-white">Title</Label>
             <Input
               value={lectureTittle}
               onChange={(e) => setLectureTittle(e.target.value)}
@@ -144,7 +144,7 @@ const LectureTab = () => {
 
           {/* Video Upload */}
           <div>
-            <Label className="text-gray-700">
+            <Label className="text-gray- dark:text-white">
               Video <span className="text-red-500">*</span>
             </Label>
             <Input
@@ -158,7 +158,7 @@ const LectureTab = () => {
           {/* Free Video Switch */}
           <div className="flex items-center space-x-3">
             <Switch checked={isFree} onCheckedChange={setIsFree} id="airplane-mode" />
-            <Label htmlFor="airplane-mode" className="text-gray-700 font-medium">
+            <Label htmlFor="airplane-mode" className="text-gray-700 font-medium dark:text-white">
               Is this video FREE?
             </Label>
           </div>

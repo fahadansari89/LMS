@@ -281,7 +281,7 @@ const publishStatusHandler=async(action)=>{
               <Button
                 disabled={isLoading}
                 onClick={updateCourseHandler}
-                className="transition-all duration-300 hover:scale-105bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md hover:shadow-lg "
+                className="transition-all duration-300 hover:scale-105 bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md hover:shadow-lg "
               >
                 {isLoading ? (
                   <>

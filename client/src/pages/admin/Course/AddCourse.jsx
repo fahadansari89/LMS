@@ -41,13 +41,13 @@ const AddCourse = () => {
 
     return (
         <motion.div
-            className="flex justify-center items-center py-10"
+            className="flex justify-center items-center py-10 "
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
             <motion.div
-                className="w-full max-w-lg bg-white shadow-lg rounded-2xl p-8 border border-gray-100"
+                className="w-full max-w-lg bg-white shadow-lg rounded-2xl p-8 border border-gray-100 dark:bg-[#0A0A0A]"
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.4 }}
@@ -129,7 +129,7 @@ const AddCourse = () => {
                         <Button
                             disabled={isLoading}
                             onClick={createCourseHandler}
-                            className="w-1/2"
+                             className="transition-all duration-300 hover:scale-105 bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md hover:shadow-lg w-1/2 "
                         >
                             {isLoading ? (
                                 <>

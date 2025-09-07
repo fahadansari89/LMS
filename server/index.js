@@ -13,6 +13,7 @@ dotenv.config()
 const app =express(); 
 const corsOption={
     origin:'https://lernify-tau.vercel.app',
+    origin:"http://localhost:5173",
     credentials:true
 }
 

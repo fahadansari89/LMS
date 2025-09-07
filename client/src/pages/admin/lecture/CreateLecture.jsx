@@ -41,15 +41,15 @@ const CreateLecture = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
             >
-                <h1 className="font-bold text-2xl text-gray-800">Let's Add Your Lectures</h1>
-                <p className="text-gray-500 text-sm mt-1">
+                <h1 className="font-bold text-2xl text-gray-800 dark:text-white">Let's Add Your Lectures</h1>
+                <p className="text-gray-500 text-sm mt-1 dark:text-white">
                     Provide a title and start building your lecture list.
                 </p>
             </motion.div>
 
             {/* Form Section */}
             <motion.div
-                className="space-y-4 bg-white shadow-md rounded-2xl p-6 border border-gray-100"
+                className="space-y-4 bg-white shadow-md rounded-2xl p-6 border border-gray-100 dark:bg-[#0A0A0A]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -94,13 +94,13 @@ const CreateLecture = () => {
 
             {/* Lecture List */}
             <motion.div
-                className="mt-8"
+                className="mt-8 "
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
             >
-                <h2 className="text-lg font-semibold mb-3 text-gray-700">Lecture List</h2>
-                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4">
+                <h2 className="text-lg font-semibold mb-3 text-gray-500 dark:text-white">Lecture List</h2>
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 dark:bg-[#0A0A0A]">
                     {lectureLoading ? (
                         <p className="text-gray-500">Loading lectures...</p>
                     ) : lectureError ? (
