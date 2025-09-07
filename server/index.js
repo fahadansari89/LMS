@@ -13,7 +13,7 @@ dotenv.config()
 const app =express(); 
 
 
-const port=process.env.PORT ||8080 ;
+const port= process.env.PORT ||8080 ;
 app.use(
   cors({
     origin: "https://lernify-topaz.vercel.app",
@@ -32,11 +32,12 @@ app.use("/course",courseRoute)
 app.use("/media",mediaRoute)
 app.use("/purchase",coursePurchaseRoute)
 app.use("/progress",courseProgressRoute)
-app.get("/", (req, res) => {
+
+app.get("/", (_, res) => {
   res.send("LMS Backend is running ✅");
 });
 
-app.listen(port, "0.0.0.0",()=>{
+app.listen(port,()=>{
     dbConnection()
 
 
