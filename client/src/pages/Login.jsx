@@ -75,6 +75,7 @@ const Login = () => {
     }
     if (loginError) {
       toast.error(loginError?.data?.message || "Login Failed");
+    
     }
   }, [loginIsLoading, registerIsLoading, loginData, registerData, loginError, registerError]);
 
