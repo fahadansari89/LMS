@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const COURSE_PROGRESS_API = "https://lernify-ksc1.onrender.com/progress";
+const COURSE_PROGRESS_API = `${process.env.BACKEND_URL}/progress`;
 
 export const courseProgressApi = createApi({
   reducerPath: "courseProgressApi",
