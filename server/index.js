@@ -11,14 +11,25 @@ import courseProgressRoute from "./routes/courseProgress.route.js"
 
 dotenv.config()
 const app =express(); 
-const corsOption={
-    origin:'https://lernify-topaz.vercel.app',
-    origin:"http://localhost:5173",
-    credentials:true
-}
+const allowedOrigins = [
+  "https://lernify-topaz.vercel.app", // your Vercel frontend
+  "http://localhost:5173"             // local frontend
+];
 
-const port=8080 || process.env.PORT;
-app.use(cors(corsOption))
+const port=process.env.PORT ||8080 ;
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
+
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cookie())
