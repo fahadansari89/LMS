@@ -13,7 +13,7 @@ dotenv.config()
 const app =express(); 
 
 
-const port= process.env.PORT ||8080 ;
+const port= 8080||process.env.PORT  ;
 app.use(
   cors({
     origin: "https://lernify-topaz.vercel.app",
