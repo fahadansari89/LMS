@@ -91,19 +91,19 @@ const Login = () => {
           <TabsList className="grid grid-cols-3 mb-4 bg-gray-200 dark:bg-gray-800 rounded-xl p-1 ml-6">
             <TabsTrigger
               value="login"
-              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all"
+              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all dark:data-[state=active]:bg-blue-600"
             >
               Login
             </TabsTrigger>
             <TabsTrigger
               value="signup"
-              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all"
+              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all  dark:data-[state=active]:bg-blue-600"
             >
               Signup
             </TabsTrigger>
             <TabsTrigger
               value="forgetPassword"
-              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all"
+              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all dark:data-[state=active]:bg-blue-600"
             >
               Forget Password
             </TabsTrigger>
