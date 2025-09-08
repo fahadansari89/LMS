@@ -68,6 +68,10 @@ export const logOut = async (_, res) => {
       secure: true, // Required for Vercel + Render (HTTPS)
       sameSite: "None", // Important when frontend & backend are on different domains
     });
+    return res.status(200).json({
+      success: true,
+      message: "Logout successful",
+    });
   } catch (error) {
     console.log("logout error", error);
     return res.status(500).json({
