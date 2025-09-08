@@ -207,7 +207,7 @@ const MobileNavbar = ({ user }) => {
         </SheetHeader>
         <Separator className="mr-2 my-2" />
         <nav className="flex flex-col space-y-4 ml-4 text-lg font-medium">
-          <Link to={'my-learning'}><span className="hover:text-blue-600 cursor-pointer transition">
+          <Link to={'mylearning'}><span className="hover:text-blue-600 cursor-pointer transition">
             My Learning
           </span></Link>
           <Link to={'/profile'}>
