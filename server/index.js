@@ -16,7 +16,7 @@ const app =express();
 const port= 8080||process.env.PORT  ;
 app.use(
   cors({
-    origin: "https://lernify-topaz.vercel.app",
+    origin:[ "https://lernify-topaz.vercel.app", "http://localhost:5173/"],
     credentials: true,
   })
 );

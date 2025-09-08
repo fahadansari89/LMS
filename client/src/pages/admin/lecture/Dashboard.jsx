@@ -20,7 +20,7 @@ const Dashboard = () => {
     return <h1 className="text-center text-xl text-gray-600">Loading...</h1>;
   if (isError)
     return (
-      <h1 className="text-center text-xl text-red-500">
+      <h1 className="text-center text-xl text-red-500 mt-18">
         Failed to get purchased courses
       </h1>
     );
