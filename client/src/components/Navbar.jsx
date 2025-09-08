@@ -27,25 +27,24 @@ import { useLogOutUserMutation } from '@/feature/api/authApi';
 import { useSelector } from 'react-redux';
 import { Arrow, Separator } from '@radix-ui/react-dropdown-menu';
 
-const navigate = useNavigate();
-const { user } = useSelector((Store) => Store.auth);
-
-const [logOutUser, { data, isSuccess }] = useLogOutUserMutation();
-
-useEffect(() => {
-  if (isSuccess) {
-    toast.success(data.message || 'User logout');
-    navigate('/login');
-  }
-}, [isSuccess]);
-
-const logOutHandler = async () => {
-  await logOutUser();
-  localStorage.clear()
-  sessionStorage.clear()
-};
 const Navbar = () => {
+  const navigate = useNavigate();
+  const { user } = useSelector((Store) => Store.auth);
 
+  const [logOutUser, { data, isSuccess }] = useLogOutUserMutation();
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success(data.message || 'User logout');
+      navigate('/login');
+    }
+  }, [isSuccess]);
+
+  const logOutHandler = async () => {
+    await logOutUser();
+    localStorage.clear()
+    sessionStorage.clear()
+  };
 
   return (
     <>
@@ -169,7 +168,7 @@ const Navbar = () => {
               Lernify
             </h1>
           </div>
-          <MobileNavbar user={user} />
+          <MobileNavbar user={user} logOutHandler={logOutHandler}/>
         </div>
       </div>
     </>
@@ -178,7 +177,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-const MobileNavbar = ({ user }) => {
+const MobileNavbar = ({ user, logOutHandler }) => {
   const navigate = useNavigate();
   const role = 'instructor';
   return (
@@ -207,46 +206,36 @@ const MobileNavbar = ({ user }) => {
           <DarkMode />
         </SheetHeader>
         <Separator className="mr-2 my-2" />
-        {
-          user ? (<div>
-            <nav className="flex flex-col space-y-4 ml-4 text-lg font-medium">
-              <Link to={'mylearning'}><span className="hover:text-blue-600 cursor-pointer transition">
-                My Learning
-              </span></Link>
-              <Link to={'/profile'}>
-                <span className="hover:text-blue-600 cursor-pointer transition">
-                  Edit Profile
-                </span>
-              </Link>
-              <Link to={'/admin/course'}>
-                <span className="hover:text-blue-600 cursor-pointer transition">
-                  Create course
-                </span>
-              </Link>
+        <nav className="flex flex-col space-y-4 ml-4 text-lg font-medium">
+          <Link to={'mylearning'}><span className="hover:text-blue-600 cursor-pointer transition">
+            My Learning
+          </span></Link>
+          <Link to={'/profile'}>
+            <span className="hover:text-blue-600 cursor-pointer transition">
+              Edit Profile
+            </span>
+          </Link>
+          <Link to={'/admin/course'}>
+            <span className="hover:text-blue-600 cursor-pointer transition">
+             Create course
+            </span>
+          </Link>
 
-              <div className="hover:text-red-500 cursor-pointer transition"
-                onClick={logOutHandler}
-              >
-                Logout
-              </div>
-            </nav>
+          <div className="hover:text-red-500 cursor-pointer transition"
+           onClick={logOutHandler}
+          >
+            Logout
+          </div>
+        </nav>
 
-            <SheetFooter className="mt-6">
-              <SheetClose asChild>
-                <Button type='submit' onClick={() => navigate('/admin/dashboard')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 transition">
-                  Dashboard
-                </Button>
-              </SheetClose>
-            </SheetFooter>
-          </div>) : (<nav className="flex flex-col space-y-4 ml-4 text-lg font-medium">
-            <Button
-              onClick={() => navigate('/login')}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 transition"
-            >
-              Signup
+        <SheetFooter className="mt-6">
+          <SheetClose asChild>
+            <Button type='submit' onClick={() => navigate('/admin/dashboard')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 transition">
+              Dashboard
             </Button>
-          </nav>)
-        }
+          </SheetClose>
+        </SheetFooter>
+
       </SheetContent>
     </Sheet>
   );
