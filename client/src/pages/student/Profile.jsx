@@ -18,6 +18,7 @@ import { useLoadUserQuery, useUpdateUserMutation } from '@/feature/api/authApi';
 import EmptyCourseCard from './EmptyCourseCard';
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
+import FullPageLoader from '@/components/FullPageLoader';
 
 const Profile = () => {
   const [name, setName] = useState('');
@@ -26,6 +27,11 @@ const Profile = () => {
   const { data, isLoading, isError, refetch } = useLoadUserQuery();
   const [updateUser, { data: updateUserData, isLoading: updateUserIsLoading, isError: updateUserIsError, isSuccess, error }] =
     useUpdateUserMutation();
+    if (isLoading) {
+      return(
+        <FullPageLoader/>
+      )
+    }
 
   useEffect(() => {
     if (isSuccess) {

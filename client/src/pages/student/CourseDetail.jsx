@@ -15,6 +15,7 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import BuyCourseButton from "@/components/BuyCourseButton";
 import { useGetCourseDetailWithStatusQuery } from "@/feature/api/purchaseApi";
+import FullPageLoader from "@/components/FullPageLoader";
 
 const CourseDetail = () => {
     const navigate = useNavigate()
@@ -23,9 +24,9 @@ const CourseDetail = () => {
     const { data, isLoading, isError } = useGetCourseDetailWithStatusQuery(courseId)
 
     if (isLoading) {
-        return (
-            <h1>Loading...</h1>
-        )
+      return(
+        <FullPageLoader/>
+      )
     }
     if (isError) {
         return (
